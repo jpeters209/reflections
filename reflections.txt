@@ -1,0 +1,2 @@
+Here are some initial reflections on creating a remote directory. A repository 
+was initially created in github. A directory was created on my desktop and itialized. This reflections file was then created, added, and committed . The directory will then be connected using "git remote add origin2  https://github.com/jpeters209/reflections.git" and "git push -u origin master"  
