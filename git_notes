@@ -1,0 +1,145 @@
+git clone url    //creates folder with cloned files
+git log  // shows versions
+q  //quits
+git diff versionA versionB  //note version = version #
+git checkout id
+git config --global color.ui auto  //adds colors to diff
+
+git config --global cor.editor "vim -w"  //set up default editor
+git scp // secure copy
+q //quit back to command line
+git stash -p  //  stash any changes
+git config user.name // for this session only
+git config user.email // for this session only or include --global 
+git config --global core.autocrif true //for Windows users..windows text editors convert LF (\n) to CRLF (\r\n) (carriage return)
+git status  // shows status of files in directory
+git add  // add files to staging area prior to commit
+git commit //brings up editor for commit message or:
+git commit -m "commit message"
+git branch //shows current branch
+git branch name //creates a branch
+git checkout name //switches to name branch
+git checkout -b new_branch_name  //combines "git branch new_branch_name" and "git checkout new_branch name"
+git checkout master //returns to most recent commit 
+git log
+git log --graph  --oneline master branchname   // shows master commits and branch commits in order
+
+Working Directory  | Staging Area  | Repository (commit 1, commit 2)
+
+git diff: changes between working directory and staging area
+git diff --staged:  changes between staging area and commit 1
+git diff id1 id2 : changes between commit 1 and commit 2 
+
+git reset --hard  // deletes changes made in Working Directory and Staging area 
+git reset --soft HEAD~1  // deletes the lasted commit that hasn't been pushed.
+git merge branch1 branch2  // merges branch you have checked out with other, so: "git merge branch2" works the same.  
+git merge --abort // restores state if conflict occurs then use git log and git diff to find conflict before merging. 
+git show commit-id // compares commit to its parent 
+git merge -d branch //deletes the branch 
+
+Create Repository on GitHub
+echo "# Second-Repo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jpeters209/Second-Repo.git
+git push -u origin master
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/jpeters209/reflections.git
+git push -u origin master
+  url: https://github.com/jpeters209/reflections
+
+  To get files added directly into github into the remote directory:
+  git pull https://github.com/jpeters209/reflections.git
+
+  To add files from the remote directory to github:
+  git push -u origin master
+
+
+
+  ls -a shows hidden files
+
+  df035382c41b4d0cda86a1aa30b5
+
+  Commit Messages
+  Message Structure
+
+  A commit messages consists of three distinct parts separated by a blank line: the title, an optional body and an optional footer. 
+
+  The layout looks like this:
+
+  type: subject
+
+  body
+
+  footer
+
+  The title consists of the type of the message and subject.
+  The Type
+
+  The type is contained within the title and can be one of these types:
+
+      feat: a new feature
+          fix: a bug fix
+	      docs: changes to documentation
+	          style: formatting, missing semi colons, etc; no code change
+		      refactor: refactoring production code
+		          test: adding tests, refactoring test; no production code change
+			      chore: updating build tasks, package manager configs, etc; no production code change
+
+			      The Subject
+
+			      Subjects should be no greater than 50 characters, should begin with a capital letter and do not end with a period.
+
+			      Use an imperative tone to describe what a commit does, rather than what it did. For example, use change; not changed or changes.
+			      The Body
+
+			      Not all commits are complex enough to warrant a body, therefore it is optional and only used when a commit requires a bit of 
+
+			      explanation and context. Use the body to explain the what and why of a commit, not the how.
+
+			      When writing a body, the blank line between the title and the body is required and you should limit the length of each line to no 
+
+			      more than 72 characters.
+			      The Footer
+
+			      The footer is optional and is used to reference issue tracker IDs.
+
+
+			      Example Commit Message
+
+			      feat: Summarize changes in around 50 characters or less
+
+			      More detailed explanatory text, if necessary. Wrap it to about 72
+			      characters or so. In some contexts, the first line is treated as the
+			      subject of the commit and the rest of the text as the body. The
+			      blank line separating the summary from the body is critical (unless
+			      you omit the body entirely); various tools like `log`, `shortlog`
+			      and `rebase` can get confused if you run the two together.
+
+			      Explain the problem that this commit is solving. Focus on why you
+			      are making this change as opposed to how (the code explains that).
+			      Are there side effects or other unintuitive consequenses of this
+			      change? Here's the place to explain them.
+
+			      Further paragraphs come after blank lines.
+
+			       - Bullet points are okay, too
+
+			        - Typically a hyphen or asterisk is used for the bullet, preceded
+				   by a single space, with blank lines in between, but conventions
+				      vary here
+
+				      If you use an issue tracker, put references to them at the bottom,
+				      like this:
+
+				      Resolves: #123
+				      See also: #456, #789
+
+
+
+
+
+
